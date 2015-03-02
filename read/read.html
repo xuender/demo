@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="read" ng-csp>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <title>read</title>
+  </head>
+  <body ng-controller="ReadCtrl">
+    <div class="container">
+      <p ng-repeat="n in notes">
+        i:{{ n.i }}<br>
+        t:{{ n.t }}<br>
+        n:{{ n.n }}<br>
+        c:{{ n.c }}
+      </p>
+      <h1>弟子规</h1>
+      <p>
+        <span id="1" note="notes">弟子规，</span>
+        <span id="2" note="notes">圣人训，</span>
+        <span id="3" note="notes">首孝悌，</span>
+        <span id="4" note="notes">次谨信。</span>
+      </p>
+      <p>
+        <span id="5" note="notes">泛爱众，</span>
+        <span id="6" note="notes">而亲仁，</span>
+        <span id="7" note="notes">有余力，</span>
+        <span id="8" note="notes">则学文。</span>
+      </p>
+    </div><!-- container -->
+    <button ng-click="update()">赋值</button>
+    <button ng-click="clean()">清除</button>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-locale_zh-cn.js"></script>
+    <script src="js/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/read.min.js"></script>
+  </body>
+</html>
+

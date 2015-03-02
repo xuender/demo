@@ -1,0 +1,37 @@
+{
+  "name": "demo",
+  "version": "1.1.1",
+  "description": "demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xuender/demo.git"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "ender",
+  "license": "APACHE2",
+  "bugs": {
+    "url": "https://github.com/xuender/demo/issues"
+  },
+  "homepage": "https://github.com/xuender/demo",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-bumpx": "~0.1.5",
+    "grunt-contrib-uglify": "~0.6.*",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-coffeelint": "~0.0.7",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-cssmin": "~0.10.0"
+  },
+  "dependencies": {
+    "grunt-contrib-cssmin": "~0.10.0"
+  }
+}
+
