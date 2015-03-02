@@ -10,12 +10,6 @@
   </head>
   <body ng-controller="ReadCtrl">
     <div class="container">
-      <p ng-repeat="n in notes">
-        i:{{ n.i }}<br>
-        t:{{ n.t }}<br>
-        n:{{ n.n }}<br>
-        c:{{ n.c }}
-      </p>
       <h1>弟子规</h1>
       <p>
         <span id="1" note="notes">弟子规，</span>
@@ -29,9 +23,15 @@
         <span id="7" note="notes">有余力，</span>
         <span id="8" note="notes">则学文。</span>
       </p>
+      <button ng-click="update()">赋值</button>
+      <button ng-click="clean()">清除</button>
+      <p ng-repeat="n in notes">
+        i:{{ n.i }}<br>
+        t:{{ n.t }}<br>
+        n:{{ n.n }}<br>
+        c:{{ n.c }}
+      </p>
     </div><!-- container -->
-    <button ng-click="update()">赋值</button>
-    <button ng-click="clean()">清除</button>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>

@@ -19,9 +19,10 @@ angular.module('read', [
         while node.n > n and f > -1
           f = html.indexOf(node.t, f+1)
           n++
-        s: f + node.t.length
+        s: f
         c: node.c
         t: node.t
+        m: node.m
       newHtml = (html, insert)->
         insert.sort((x, y)->
           return x.s - y.s
@@ -29,14 +30,22 @@ angular.module('read', [
         o = 0
         ret = ''
         for i in insert
-          if o != i.s
+          if o < i.s
             ret += html.substring(o, i.s)
-          o = i
-          ret += '<small>'
-          ret += i.t
-          ret += ':'
-          ret += i.c
-          ret += '</small>'
+            h = true
+            o = i.s + i.t.length
+          if i.m
+            ret += "<ruby><rb>#{ i.t }</rb><rp>(</rp><rt>#{ i.m }</rt><rp>)</rp></ruby>"
+            h = false
+          if i.c
+            if h
+              ret += i.t
+            ret += '<small>'
+            ret += i.t
+            ret += ':'
+            ret += i.c
+            ret += '</small>'
+        ret += html.substring(o, html.length)
         ret
       update = (notes)->
         insert = []
@@ -65,13 +74,19 @@ ReadCtrl = ($scope, $log, $http)->
         i: 1
         t: '规'
         n: 0
-        c: '规则，规范'
+        c: '规则'
       }
       {
-        i: 2
-        t: '圣人'
+        i: 3
+        t: '悌'
         n: 0
-        c: '孔子'
+        m: 'ti'
+      }
+      {
+        i: 3
+        t: '悌'
+        n: 0
+        c: '这里是尊敬兄长的意思'
       }
     ]
 
